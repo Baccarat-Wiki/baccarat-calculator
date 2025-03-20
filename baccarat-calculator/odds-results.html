@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baccarat Odds Calculator Results</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400..600;1,400&family=Raleway:wght@900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="data.js"></script>
+    <script src="common.js" defer></script>
+    <script src="odds-results.js" defer></script>
+</head>
+<body>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="position: absolute; width: 0; height: 0"
+        aria-hidden="true"
+    >
+        <symbol id="icon-arrow" fill="none" viewBox="0 0 12 12">
+            <path fill="currentColor" d="m6.6 11.8 5.2-5.2c.3-.4.3-.8 0-1.1L6.6.2a.8.8 0 0 0-1.2 1.1l4 4H.7a.8.8 0 0 0 0 1.5h8.5l-3.9 3.9a.8.8 0 0 0 1.2 1Z"/>
+        </symbol>
+        <symbol id="icon-caret" fill="none" viewBox="0 0 14 8">
+            <path fill="#111721" d="m13.8 1.3-6 6.4a1 1 0 0 1-1.6 0l-6-6.4A.8.8 0 0 1 .7 0h12.6c.6 0 1 .8.5 1.3Z"/>
+        </symbol>
+    </svg>
+    <header class="container">
+        <a href="https://baccarat.wiki/" class="external">
+            <img width="207" src="images/logo.png" alt="Baccarat Calculator logo">
+        </a>
+    </header>
+    <main class="container">
+        <h1>
+            <a href="odds.html">
+                <span class="back-arrow">
+                    <svg width="12" height="12">
+                        <use xlink:href="#icon-arrow"></use>
+                        ⬅
+                    </svg>
+                </span>
+                Odds Results
+            </a>
+        </h1>
+
+        <div class="tabs">
+            <input type="radio" name="tab" id="tab-1" checked>
+            <label for="tab-1">Overview</label>
+            <input type="radio" name="tab" id="tab-2">
+            <label for="tab-2">Number of Cards</label>
+            <input type="radio" name="tab" id="tab-3">
+            <label for="tab-3">Detailed Results</label>
+        </div>
+
+        <div class="tabs-panel" id="panel-1">
+            <div class="odds-table-wrap">
+                <table class="odds-table" id="overview-table">
+                    <thead>
+                        <tr>
+                            <th>Outcome</th>
+                            <th>Probability</th>
+                            <th>Banker Bet</th>
+                            <th>Player Bet</th>
+                            <th>Tie Bet 8 to 1</th>
+                            <th>Tie Bet 9 to 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="6">Calculating</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hands-select">
+                <div class="form-element">
+                    <label for="prob-player-hand">Player Hand</label>
+                    <select id="prob-player-hand">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="form-element">
+                    <label for="prob-banker-hand">Banker Hand</label>
+                    <select id="prob-banker-hand">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="tiled tiled-results">
+                <span class="tiled-label">Hands Probability:</span>
+                <span id="prob-value" class="tiled-value">0%</span>
+            </div>
+    
+        </div>
+        <div class="tabs-panel" id="panel-2">
+            <div class="odds-table-wrap">
+                <table class="odds-table" id="numbers-table">
+                    <thead>
+                        <tr>
+                            <th>Banker Hand</th>
+                            <th>Player Hand</th>
+                            <th>Total</th>
+                            <th>Combinations</th>
+                            <th>Probability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td colspan="5">Calculating</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="filled-field-label">Total Combinations</p>
+            <div class="filled-field" id="numbers-total">0</div>
+        </div>
+        <div class="tabs-panel" id="panel-3">
+            <div class="hands-select">
+                <div class="form-element">
+                    <label for="detailed-player-hand">Player Hand</label>
+                    <select id="detailed-player-hand">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="form-element">
+                    <label for="detailed-banker-hand">Banker Hand</label>
+                    <select id="detailed-banker-hand">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="filled-field-label">Natural</p>
+            <div class="filled-field" id="detailed-natural">?</div>
+
+            <p class="filled-field-label">Combinations</p>
+            <div class="filled-field" id="detailed-combinations">0</div>
+
+            <div class="tiled tiled-results">
+                <span class="tiled-label">Probability:</span>
+                <span  class="tiled-value" id="detailed-probability">0%</span>
+            </div>
+
+        </div>
+    
+
+    </main>
+</body>
+</html>

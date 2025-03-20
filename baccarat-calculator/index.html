@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baccarat Calculators</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400..600;1,400&family=Raleway:wght@900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="common.js" defer></script>
+</head>
+<body>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        style="position: absolute; width: 0; height: 0"
+        aria-hidden="true"
+    >
+        <symbol id="icon-odds" fill="none" viewBox="0 0 36 36">
+            <path fill="currentColor" d="m33.3 5-3.7-.5.1 1v22.6a4.7 4.7 0 0 1-4.7 4.7h-1l5.2.8a3.1 3.1 0 0 0 3.6-2.7l3.1-22.4A3.1 3.1 0 0 0 33.3 5Z"/>
+            <path fill="currentColor" d="M25 2.4h-5a4.7 4.7 0 0 1 1.8 3L25 28c.1 1.2-.2 2.4-.9 3.4h1a3.1 3.1 0 0 0 3.1-3.2V5.5a3.1 3.1 0 0 0-3-3.1Zm-1.7 25.7L20.2 5.7A3.1 3.1 0 0 0 16.6 3L2.7 5A3.1 3.1 0 0 0 .1 8.5L3.2 31a3.1 3.1 0 0 0 3.6 2.7l13.9-2a3.1 3.1 0 0 0 2.6-3.5Zm-17-17.4a.8.8 0 0 1-1.1-.2l-.6-.9-.4 1a.8.8 0 0 1-1.4-.5l.8-2.4A.8.8 0 0 1 5 7.5l1.5 2.1a.8.8 0 0 1-.2 1.1Zm9.3 7.8-2.3 3.1a1.6 1.6 0 0 1-2.2.3L8 19.6a2.7 2.7 0 1 1 3.3-4.4 2.7 2.7 0 1 1 4.3 3.3Zm5 8-.8 2.4a.8.8 0 0 1-1.4.2L17 27a.8.8 0 1 1 1.3-.9l.6.9.4-1a.8.8 0 0 1 1.5.5Z"/>
+        </symbol>
+        <symbol id="icon-house-edge" fill="none" viewBox="0 0 36 36">
+            <path fill="currentColor" d="m35.4 16.3-3.6-3.2V6.4c0-.5-.4-1-1-1h-4a1 1 0 0 0-1 1v1.3l-6.6-6c-.7-.6-1.7-.6-2.4 0L.6 16.3A1.8 1.8 0 0 0 3 19l1.2-1v14.8c0 1 .9 2 2 2h23.6c1.1 0 2-1 2-2V18l1.1 1c.4.3.8.5 1.2.5 1.7 0 2.5-2 1.3-3.2ZM18 32a8.9 8.9 0 1 1 0-18 8.9 8.9 0 0 1 0 18Z"/>
+            <path fill="currentColor" d="M14.5 21.4a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm7.1 7.1a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm1.2-10.3c-.5-.5-1.4-.5-1.9 0l-7.6 7.6c-.5.5-.5 1.4 0 1.9a1.3 1.3 0 0 0 1.9 0l7.6-7.6c.5-.5.5-1.3 0-1.9Z"/>
+        </symbol>
+        <symbol id="icon-commission" fill="none" viewBox="0 0 36 36">
+            <path fill="currentColor" d="M12.6 8.9c1-.5 2.2-.8 3.4-.8-.1-.6-.4-1.2-.7-1.8a.6.6 0 0 1 .9-.8l.1.2c.5.7.8 1.5 1 2.4h1.4c0-1.3.5-2.5 1.2-3.6a.6.6 0 0 1 1 .7c-.5.9-.9 1.8-1 2.9 1.2 0 2.4.3 3.5.8 3.4-2.3 4.5-5 3.6-7.2A3.5 3.5 0 0 0 24.7 0a.6.6 0 0 0-.7.5c-.2.5-.8 2-1.7 2.3a.3.3 0 0 1-.3 0l-1.4-1.5a3.6 3.6 0 0 0-5.2 0L14 2.7a.3.3 0 0 1-.3.1C12.8 2.5 12.2 1 12 .5a.6.6 0 0 0-.7-.5A3.5 3.5 0 0 0 9 1.7C8 4 9.2 6.6 12.6 9Z"/>
+            <path fill="currentColor" fill-rule="evenodd" d="M22.9 10c1 .4 2 1.1 2.8 2a21 21 0 0 1 5.2 15.8c0 .6-.2 1.3-.4 1.9C29.7 31.6 27 36 18 36c-8.8.1-12-4.4-12.6-6.3-1.9-8.6 3-18.6 8.6-20 1-.4 2.7-.4 4-.4h1.4c1.1 0 2.3.2 3.4.7Zm-8.7 11a2.1 2.1 0 1 0 0-4.3 2.1 2.1 0 0 0 0 4.3Zm7.6 7.5a2.1 2.1 0 1 0 0-4.2 2.1 2.1 0 0 0 0 4.2Zm1.2-11c-.5-.5-1.4-.5-2 0l-8 8.2c-.6.5-.6 1.4 0 2a1.4 1.4 0 0 0 2 0l8-8.1c.6-.6.6-1.5 0-2Z" clip-rule="evenodd"/>
+        </symbol>
+        <symbol id="icon-arrow" fill="none" viewBox="0 0 12 12">
+            <path fill="currentColor" d="m6.6 11.8 5.2-5.2c.3-.4.3-.8 0-1.1L6.6.2a.8.8 0 0 0-1.2 1.1l4 4H.7a.8.8 0 0 0 0 1.5h8.5l-3.9 3.9a.8.8 0 0 0 1.2 1Z"/>
+        </symbol>
+        <symbol id="icon-caret" fill="none" viewBox="0 0 14 8">
+            <path fill="#111721" d="m13.8 1.3-6 6.4a1 1 0 0 1-1.6 0l-6-6.4A.8.8 0 0 1 .7 0h12.6c.6 0 1 .8.5 1.3Z"/>
+        </symbol>
+    </svg>
+    <header class="container">
+        <a href="https://baccarat.wiki/" class="external">
+            <img width="207" src="images/logo.png" alt="Baccarat Calculator logo">
+        </a>
+    </header>
+    <main class="container">
+        <h1>Baccarat Calculators</h1>
+
+        <a href="odds.html" class="chapter-link">
+            <span class="chapter-icon">
+                <svg width="36" height="36">
+                    <use xlink:href="#icon-odds"></use>
+                    🃏%
+                </svg>
+            </span>
+            <span class="chapter-title">
+                Odds Calculator
+            </span>
+            <span class="chapter-arrow">
+                <svg width="12" height="12">
+                    <use xlink:href="#icon-arrow"></use>
+                    ➡
+                </svg>
+            </span>
+        </a>
+        <a href="house-edge.html" class="chapter-link">
+            <span class="chapter-icon">
+                <svg width="36" height="36">
+                    <use xlink:href="#icon-house-edge"></use>
+                    🏠%
+                </svg>
+            </span>
+            <span class="chapter-title">
+                House Edge Calculator
+            </span>
+            <span class="chapter-arrow">
+                <svg width="12" height="12">
+                    <use xlink:href="#icon-arrow"></use>
+                    ➡
+                </svg>
+            </span>
+        </a>
+        <a href="commission.html" class="chapter-link">
+            <span class="chapter-icon">
+                <svg width="36" height="36">
+                    <use xlink:href="#icon-commission"></use>
+                    💰%
+                </svg>
+            </span>
+            <span class="chapter-title">
+                Commission Calculator
+            </span>
+            <span class="chapter-arrow">
+                <svg width="12" height="12">
+                    <use xlink:href="#icon-arrow"></use>
+                    ➡
+                </svg>
+            </span>
+        </a>
+
+        <div class="tiled">
+            <p>
+                Find more useful tools, software, guides, tips, and strategies at Baccarat Wiki
+            </p>
+            <a href="https://baccarat.wiki/" class="btn external">
+                Explore Now!
+            </a>
+        </div>
+    </main>
+    <footer class="container">
+        Version 1.3. Last updated on 2025-03-20.
+    </footer>
+</body>
+</html>
