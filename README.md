@@ -5,6 +5,17 @@ Baccarat Calculator Extension by Baccarat.Wiki
 
 > **Browser support:** This extension can be used in Chrome, Firefox, Opera, and Edge browsers!
 
+Download Baccarat Calculator Extension for Your Browser
+---------------------------------------------------
+
+*   **Chrome:** [https://chromewebstore.google.com/detail/baccarat-calculator/pfijlcojkoblcegopkelmeocdnockjdj](https://chromewebstore.google.com/detail/baccarat-calculator/pfijlcojkoblcegopkelmeocdnockjdj)
+    
+*   **Firefox:** [https://addons.mozilla.org/en-US/firefox/addon/baccarat-calculator/](https://addons.mozilla.org/en-US/firefox/addon/baccarat-calculator/)
+    
+*   **Edge:** [https://microsoftedge.microsoft.com/addons/detail/baccarat-calculator/geijgclcojplgobpmgcckknfibfoodeg](https://microsoftedge.microsoft.com/addons/detail/baccarat-calculator/geijgclcojplgobpmgcckknfibfoodeg)
+
+*   **Opera:** [https://addons.opera.com/en/extensions/details/baccarat-calculator/](https://addons.opera.com/en/extensions/details/baccarat-calculator/)
+
 1\. Odds Calculator
 -------------------
 
