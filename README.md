@@ -1,7 +1,9 @@
-Baccarat Calculator by Baccarat.Wiki
+Baccarat Calculator Extension by Baccarat.Wiki
 ====================================
 
 **Elevate your baccarat gameplay** with a suite of three powerful calculators designed by the [Baccarat Wiki](https://baccarat.wiki/) team. Whether you’re exploring odds, refining strategies, or digging into the finer details, this tool streamlines your analysis and boosts your understanding of the game.
+
+> **Browser support:** This extension can be used in Chrome, Firefox, Opera, and Edge browsers!
 
 1\. Odds Calculator
 -------------------
